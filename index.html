@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Breezytek</title>
+    <link rel="icon" href="Blue_Simple_Snow_Flake_Logo-.png" type="image/x-icon">
+    
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen bg-gray-900 text-white">
+
+   <!-- Navbar -->
+   <nav class="bg-[#141414] border-gray-200 dark:bg-gray-900 fixed w-full z-50">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="Blue_Simple_Snow_Flake_Logo-.png" class="h-8" alt="Breezytek Logo" />
+            <span class="self-center text-2xl font-semibold whitespace-nowrap text-[#63c5da]">Breezytek</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button type="button" class="text-white bg-[#63c5da] hover:bg-[#4faac2] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center">Get started</button>
+            <button data-collapse-toggle="navbar-cta" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+            </button>
+        </div>
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+            <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-[#141414] dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li><a href="#home" class="block py-2 px-3 md:p-0 text-[#63c5da] rounded-sm md:text-[#63c5da]">Home</a></li>
+                <li><a href="#about" class="block py-2 px-3 md:p-0 text-white hover:text-[#4faac2]">About</a></li>
+                <li><a href="#services" class="block py-2 px-3 md:p-0 text-white hover:text-[#4faac2]">Services</a></li>
+                <li><a href="#contact" class="block py-2 px-3 md:p-0 text-white hover:text-[#4faac2]">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="relative w-full h-screen overflow-hidden" x-data="{ currentSlide: 0, images: [
+        'https://d-airconditioning.com/cdn/shop/t/2/assets/slide_5.jpg?v=99632552444333527881642420306',
+        'https://d-airconditioning.com/cdn/shop/t/2/assets/slide_2.jpg?v=99632552444333527881642420306',
+        'https://d-airconditioning.com/cdn/shop/t/2/assets/slide_3.jpg?v=99632552444333527881642420306'
+    ] }" x-init="setInterval(() => { currentSlide = (currentSlide + 1) % images.length }, 5000)">
+
+        <!-- Slides -->
+        <template x-for="(image, index) in images" :key="index">
+            <div x-show="currentSlide === index" class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000" 
+                 :style="'background-image: url(' + image + ');'"></div>
+        </template>
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+        <!-- Hero Content -->
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-6">
+            <h1 class="text-4xl md:text-6xl font-bold text-white">Your Comfort, Our Priority</h1>
+            <p class="mt-4 text-lg md:text-xl text-gray-200">Premium Air Conditioning Solutions for Every Season</p>
+            <a href="#" class="mt-6 bg-[#63c5da] hover:bg-[#4faac2] text-white font-bold py-3 px-6 rounded-lg text-lg">Explore Services</a>
+        </div>
+
+    </section>
+
+
+  <!-- About Section -->
+<section id="about" class="min-h-screen flex items-center justify-center p-6 bg-[#141414]">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-center text-center md:text-left max-w-5xl">
+        <!-- Text Content -->
+        <div class="md:w-1/2 p-6">
+            <h2 class="text-4xl font-bold text-[#63c5da] mb-4" style="font-family: 'Montserrat', sans-serif;">
+                Precision Cooling, Perfect Comfort – The Breezytek Way
+            </h2>
+            <p class="text-lg text-gray-300" style="font-family: 'Montserrat', sans-serif;">
+                At Breezytek, we redefine climate control with cutting-edge HVAC solutions tailored for both 
+                commercial and residential spaces. Whether you're constructing a new facility, upgrading an 
+                existing system, or in need of expert maintenance, our team ensures top-tier performance and 
+                energy efficiency. <br><br>
+                
+                Our dedicated engineers and technicians specialize in custom installations, proactive servicing, 
+                and innovative cooling strategies that guarantee comfort all year round. With a commitment to 
+                excellence and sustainability, Breezytek is your trusted partner in creating healthier, 
+                smarter environments.
+            </p>
+        </div>
+
+        <!-- Image -->
+        <div class="md:w-1/2 flex justify-center">
+            <img src="https://www.shutterstock.com/image-photo/air-conditioner-technician-repair-service-600nw-2304576719.jpg" alt="Breezytek HVAC Solutions" class="rounded-2xl w-full max-w-md shadow-lg">
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="min-h-screen flex flex-col items-center justify-center p-6 bg-[#141414]" style="font-family: 'Montserrat', sans-serif;">
+    <h2 class="text-3xl md:text-5xl font-semibold text-[#63c5da]">Our Services</h2>
+    <p class="text-white text-center max-w-3xl mt-4"> 
+        At BreezyTek, we specialize in cutting-edge climate control solutions tailored for residential, commercial, and industrial applications. Our expert team ensures optimal comfort and efficiency with our top-tier services.
+    </p>
+
+    <div class="mt-8 max-w-5xl grid md:grid-cols-2 gap-6">
+        <div>
+            <h3 class="text-xl font-bold text-[#63c5da]">Maintenance & Optimization</h3>
+            <p class="text-white mt-2" style="font-family: 'Montserrat', sans-serif;">
+                Regular system maintenance is crucial for longevity and efficiency. Our maintenance plans include inspections, cleaning, and performance tuning to keep your systems operating at peak levels.
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold text-[#63c5da]">Installation & Upgrades</h3>
+            <p class="text-white mt-2">
+                Our team provides seamless installation of cooling and ventilation systems, including smart climate control integration and energy-efficient upgrades.
+            </p>
+        </div>
+    </div>
+
+    <div class="mt-8 max-w-5xl grid md:grid-cols-2 gap-6">
+        <img src="https://blog.carousell.ph/wp-content/uploads/ph_AirConServicing_Blog800x600-2.png" alt="BreezyTek Maintenance" class="rounded-lg shadow-lg w-full h-auto">
+        <img src="https://ahouseinthehills.com/wp-content/uploads/2024/02/What-To-Consider-When-Installing-Air-Conditioner.jpeg" alt="BreezyTek Installation" class="rounded-lg shadow-lg w-full h-auto">
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+<section class="bg-[#141414] text-white py-12 px-6">
+    <div class="container mx-auto">
+        <h2 class="text-4xl font-semibold text-center text-[#63c5da]">Contact Us</h2>
+
+        <!-- Contact Info Boxes -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+            <div class="bg-white text-black p-6 text-center rounded-lg shadow-lg">
+                <i class="fas fa-map-marker-alt text-3xl text-[#63c5da]"></i>
+                <h3 class="text-lg font-bold mt-2">Address</h3>
+                <p>Metro Manila, Philippines</p>
+            </div>
+            <div class="bg-white text-black p-6 text-center rounded-lg shadow-lg">
+                <i class="fas fa-phone text-3xl text-[#63c5da]"></i>
+                <h3 class="text-lg font-bold mt-2">Contact Number</h3>
+                <p>+63 912 345 6789</p>
+            </div>
+            <div class="bg-white text-black p-6 text-center rounded-lg shadow-lg">
+                <i class="fas fa-envelope text-3xl text-[#63c5da]"></i>
+                <h3 class="text-lg font-bold mt-2">Email Address</h3>
+                <p>support@breezytek.com</p>
+            </div>
+            <div class="bg-white text-black p-6 text-center rounded-lg shadow-lg">
+                <i class="fas fa-globe text-3xl text-[#63c5da]"></i>
+                <h3 class="text-lg font-bold mt-2">Website</h3>
+                <p>www.breezytek.com</p>
+            </div>
+        </div>
+
+        <!-- Contact Form & Google Maps -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+            <!-- Google Maps Placeholder -->
+            <div class="bg-white flex items-center justify-center rounded-lg h-64 shadow-lg">
+                <p class="text-gray-700">Google Maps will be placed here</p>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="bg-white p-6 rounded-lg shadow-lg">
+                <input type="text" class="w-full p-2 mb-4 border border-gray-300 bg-white text-black rounded" placeholder="Your Name">
+                <input type="email" class="w-full p-2 mb-4 border border-gray-300 bg-white text-black rounded" placeholder="Your Email">
+                <input type="text" class="w-full p-2 mb-4 border border-gray-300 bg-white text-black rounded" placeholder="Subject">
+                <textarea class="w-full p-2 mb-4 border border-gray-300 bg-white text-black rounded h-32" placeholder="Message"></textarea>
+                <button class="bg-[#63c5da] text-white px-6 py-2 rounded hover:bg-[#52a4ba]">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="h-[25vh] flex flex-col items-center justify-center bg-[#63c5da] text-white text-center p-4" style="font-family: 'Montserrat', sans-serif;">
+    <h3 class="text-xl font-bold">Breezytek</h3>
+    <p>123 Street, Tondo, Philippines</p>
+    <p class="font-semibold">+093 692 60845 | Breezytek@gmail.com</p>
+
+    <div class="flex space-x-4 mt-2">
+        <a href="#" class="text-white text-xl"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white text-xl"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white text-xl"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="text-white text-xl"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-white text-xl"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <p class="text-sm mt-2">
+        © <strong>Your Site Name</strong>, All Rights Reserved | Designed By <span class="font-bold">HTML Codex</span>
+    </p>
+</footer>
+
+    
+
+</body>
+</html>
